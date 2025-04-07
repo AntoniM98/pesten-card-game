@@ -57,7 +57,7 @@ async function drawCard(drawer, amount = 1, manualDraw = false) {
 
     const destination = document.getElementById(newCard.id);
     await drawCardAnimation(destination);
-    destination.src = drawer === player ? newCard.img : '../images/BACK.png';
+    destination.src = drawer === player ? newCard.img : './images/BACK.png';
   }
 
   if(manualDraw) togglePassBtn(false);
@@ -248,7 +248,7 @@ function openPickSuitModal() {
         pickSuitModal.close();
         pickSuitModal.style.display = 'none';
         suitIndicator.style.display = 'block';
-        suitIndicator.src = `../images/${askedSuit}-icon.png`;
+        suitIndicator.src = `./images/${askedSuit}-icon.png`;
       
         nextTurn();
       }, interval);
@@ -309,7 +309,7 @@ pickSuitModal.addEventListener('click', (event) => {
     pickSuitModal.close();
     pickSuitModal.style.display = 'none';
     suitIndicator.style.display = 'block';
-    suitIndicator.src = `../images/${askedSuit}-icon.png`;
+    suitIndicator.src = `./images/${askedSuit}-icon.png`;
     nextTurn();
   }
 });

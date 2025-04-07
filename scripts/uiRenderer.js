@@ -32,7 +32,7 @@ export function updateHand(hand, set = true) {
       const cardHTML = document.createElement('img');
       cardHTML.classList.add('card');
       cardHTML.id = card.id;
-      cardHTML.src = hand === player ? card.img : '../images/BACK.png';
+      cardHTML.src = hand === player ? card.img : './images/BACK.png';
       element.appendChild(cardHTML); 
     });
     return;

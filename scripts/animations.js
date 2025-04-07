@@ -25,7 +25,7 @@ export function drawCardAnimation(destination) {
     const deckCopy = document.createElement('img');
     deckCopy.style.position = 'absolute';
     deckCopy.classList.add('card', 'move-card-animation', 'non-interactable');
-    deckCopy.src = '../images/BACK.png';
+    deckCopy.src = './images/BACK.png';
     deckEl.appendChild(deckCopy); 
     calculateMovement(deckCopy, destination, 0.3);
 
