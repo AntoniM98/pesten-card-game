@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesten</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/animations.css">
+    <script src="https://kit.fontawesome.com/4738a6be8e.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <main>
+      <div class="game-container">
+        <div class="opponent-area">
+          <div class="hand" id="opponent-hand"></div>
+        </div>
+
+        <div class="play-area">
+          <div class="discard-pile" id="discard-pile">
+            <img class="suit-indicator" src="images/hearts-icon.png">
+          </div>
+          <div class="deck" id="deck">
+            <img class="card" src="images/BACK.png">
+          </div>
+          <button class="pass-button" id="pass-button" disabled>Pass turn</button>
+        </div>
+        
+        <div class="player-area">
+          <div class="hand" id="player-hand"></div>
+        </div>
+
+        <div class="score-container">
+          <h4 class="turn-header" id="turn">Distributing cards...</h4>
+          <p>You: <span id="player-score">0</span></p>
+          <p>Opponent: <span id="opponent-score">0</span></p>
+          <button id="rules-button" class="button">Rules</button>
+        </div>
+      </div>
+
+      <dialog class="rules-modal">
+        <i class="fa-solid fa-xmark close-rules-button"></i>
+        <h2 class="rules-header">How to play?</h2>
+        <p>On each player's turn, they can <strong>play</strong> a card that matches either the <strong>suit</strong> or <strong>value</strong> of the card on top of the discard pile. If no card can be played, a card must be <strong>drawn</strong> from the deck. The player who empties their hand first wins.</p>
+        <p>The game can't be ended with any of the special cards. If one is played as the final card the player must draw a penalty card.</p>
+        <h3 class="card-effects-header">Special cards</h3>
+        <div class="special-card-grid">
+          <div class="special-card">
+            <img class="card" src="./images/A-H.png">
+            <p>An Ace reverses the turn order</p>
+          </div>
+          <div class="special-card">
+            <img class="card" src="./images/2-H.png">
+            <p>A 2 forces the next player to draw 2 cards. It can be countered with another 2 or a Joker.</p>
+          </div>
+          <div class="special-card">
+            <img class="card" src="./images/8-H.png">
+            <p>An 8 forces the next player to skip their turn.</p>
+          </div>
+          <div class="special-card">
+            <img class="card" src="./images/J-H.png">
+            <p>A Jack allows the player to choose the suit that must be played next. It can be played on any card.</p>
+          </div>
+          <div class="special-card">
+            <img class="card" src="./images/J-R.png">
+            <p>A Joker forces the next player to draw 5 cards. It can be played on any card and can be countered with another Joker or a 2.</p>
+          </div>
+        </div>
+      </dialog>
+
+      <dialog class="pick-suit-modal">
+        <h2 class="pick-suit-header"></h2>
+        <div class="modal-content">
+          <img class="suit" id="hearts" src="./images/hearts-icon.png">
+          <img class="suit" id="spades" src="./images/spades-icon.png">
+          <img class="suit" id="diamonds" src="./images/diamonds-icon.png">
+          <img class="suit" id="clubs" src="./images/clubs-icon.png">
+        </div>
+      </dialog>
+
+      <dialog class="end-game-modal">
+        <h2 id="end-message"></h2>
+        <button id="replay-button" class="button">Replay?</button>
+      </dialog>
+    </main>
+    <script type="module" src="scripts/gameplay.js"></script>
+    <script type="module" src="scripts/uiRenderer.js"></script>
+    <script type="module" src="scripts/animations.js"></script>
+  </body>
+</html>

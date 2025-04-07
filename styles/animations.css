@@ -1,0 +1,21 @@
+.move-card-animation {
+  animation: move-card var(--duration) ease-in-out forwards;
+}
+
+@keyframes move-card {
+  100% {
+    transform: translate(var(--moveX), var(--moveY));
+  }
+}
+
+.shake-animation {
+  animation: shake-card 0.25s ease-in-out 2;
+}
+
+@keyframes shake-card {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  50% { transform: translateX(2px); }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
